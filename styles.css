@@ -124,7 +124,6 @@ a {
   }
 
   .regular-block {
-        border-inline: 7px solid lightgray;
         display: inline-block;
         width: 500px;
         height: 300px;
