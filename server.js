@@ -1,19 +1,17 @@
 var http = require('http');
 var fs = require('fs');
 
+var express = require('express')
+const app = express(); 
 
-function onRequest(request, response) {
-    response.writeHead(500, {'Content-Type': 'text/html'});
-    fs.readFile('./index.ejs', null, function(error, data) {
-        if (error) {
-            response.writeHead(404);
-            response.write('File not found!')
-        } else {
-            response.write(data);
-        }
-        response.end();
-    },)
-}
+app.get('/', (req, res) => {
+    res.render("index");
+});
 
+port = 8080
+app.listen(port, () => {
+    console.log(`Now listening on port ${port}`);
+});
 
-http.createServer(onRequest).listen(8080);
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname));
