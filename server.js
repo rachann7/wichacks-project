@@ -2,7 +2,7 @@ var http = require('http');
 var fs = require('fs');
 
 var express = require('express')
-const app = express(); 
+const app = express();
 
 app.get('/', (req, res) => {
     res.render("index");
@@ -15,3 +15,4 @@ app.listen(port, () => {
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname));
+
