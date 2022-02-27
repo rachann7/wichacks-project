@@ -9,12 +9,20 @@
     body {
         background-image: url('/images/background-image.jpeg');
     }
+
     .block {
         background-image: url(images/stock-image.jpg);
     }
-    <% if(display != "none"){ %>
+
+    <% if(display == "Positive"){ %>
     .block {
         background-image: url('/images/upgrade-plus-symbol.jpeg');
+    } 
+    <% } %>
+
+    <% if(display == "Negative"){ %>
+    .block {
+        background-image: url('/images/minus-symbol.jpeg');
     } 
     <% } %>
 </style>
