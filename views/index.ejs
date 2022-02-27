@@ -14,15 +14,15 @@
         background-image: url(images/stock-image.jpg);
     }
 
-    <% if(display == "Positive"){ %>
+    <% if(display == "Negative"){ %>
     .block {
-        background-image: url('/images/upgrade-plus-symbol.jpeg');
+        background-image: url('/images/minus-symbol.png');
     } 
     <% } %>
 
-    <% if(display == "Negative"){ %>
-    .block {
-        background-image: url('/images/minus-symbol.jpeg');
+    <% if(display == "Positive"){ %>
+    .block { 
+        background-image: url('/images/upgrade-plus-symbol.jpeg');
     } 
     <% } %>
 </style>
