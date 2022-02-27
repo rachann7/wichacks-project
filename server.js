@@ -7,18 +7,17 @@ var express = require('express')
 const app = express();
 
 app.get('/', (req, res) => {
-    res.render("index");
+    res.render("index", {display: "none"});
 });
 
 app.get('/search', bodyParser, (req, res) => {
     var item = req.query.search;
     console.log(item);
-    request('localhost:5000/sentimentRequest/search=' + item, { json: true }, (err, res, body) => {
+    request("http://localhost:5000", { json: true }, (err, res, body) => {
         if (err) { return console.log(err); }
-        console.log(body.url);
-        console.log(body.explanation);
+        console.log(res.body);
 });
-    res.redirect("/");
+    res.render("index", {display: res.body});
 });
 
 port = 8080
