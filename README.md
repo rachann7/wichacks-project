@@ -1,1 +1,1 @@
-# Dashboard (wichacks-project)
+# Dashboard
